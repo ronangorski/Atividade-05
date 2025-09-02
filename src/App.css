@@ -1,0 +1,231 @@
+/* Fundo da página */
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Container principal */
+.app-container {
+  padding: 20px;
+  min-height: 100vh;
+}
+
+
+/* Centralização do título e da busca */
+.search-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+/* Link para favoritos */
+.nav-link {
+  text-decoration: none;
+  color: blue;
+  margin-bottom: auto;
+  display: inline-block;
+}
+
+
+/* Espaço da busca (input + botão) */
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.search-box input {
+  padding: 8px;
+  width: 60%;
+  max-width: 300px;
+}
+
+.search-box button {
+  padding: 8px 12px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #555;
+}
+
+
+/* Página inicial de filmes populares */
+.section-title {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+
+}
+
+/* Grid de filmes */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+
+/* Card do filme */
+.movie-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie-card img {
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+  background-color: #ddd;
+  border-radius: 8px;
+}
+
+.movie-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.movie-card p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+
+/* Botão de favoritar/remover */
+.movie-card button {
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-top: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.movie-card button:hover {
+  background-color: #555;
+}
+
+.movie-card button.remover {
+  background-color: red;
+}
+
+.movie-card button.remover:hover {
+  background-color: darkred;
+}
+
+
+/* Informações do filme dentro do card */
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+}
+
+.movie-info h3 {
+  overflow: auto;
+}
+
+.movie-info p {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+
+/* Links nos cards */
+.movie-card a {
+  color: #333333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.movie-card a:hover {
+  color: #666666;
+  cursor: pointer;
+}
+
+
+/* Paginação */
+.pagination {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.pagination button {
+  margin: 0 10px;
+}
+
+
+/* Container dos favoritos */
+.favorites-container {
+  max-width: auto;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+
+/* Página do Filme */
+.movie-details-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.movie-details-poster {
+  float: left;
+  margin-right: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  background-color: #ddd;
+  object-fit: contain;
+}
+
+.movie-details-fav-btn {
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+}
+
+.movie-details-fav-btn.favorited {
+  background-color: red;
+}
+
+.movie-details-fav-btn.favorited:hover {
+  background-color: darkred;
+  cursor: pointer;
+}
+
+.movie-details-fav-btn.not-favorited {
+  background-color: #333;
+}
+
+.movie-details-fav-btn.not-favorited:hover {
+  background-color: #666666;
+  cursor: pointer;
+}
+
+
+/* Clearfix */
+.clearfix {
+  clear: both;
+}
