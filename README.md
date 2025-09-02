@@ -53,14 +53,11 @@ Este é um aplicativo ***React*** para buscar filmes, visualizar detalhes e gere
 
 5. Inicie a aplicação:
     ```bash
-    npm start
+    npm run dev
     ```
 
 6. Abra no navegador o endereço:
     ```
     http://localhost:5173/
     ```
-=======
-# Atividade-05
-Consumo de API com ReactJS
->>>>>>> 6e70495dafa626420bee3bc8221938200a4356ce
+    

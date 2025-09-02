@@ -6,14 +6,20 @@ import { API_KEY, BASE_URL } from './api';
 
 function App({ favorites, toggleFavorite }) {
   const [search, setSearch] = useState('');
-  const [searchTerm, setSearchTerm] = useState(''); // termo fixo para busca
+  const [searchTerm, setSearchTerm] = useState('');
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [isSearching, setIsSearching] = useState(false);
 
   const handleInputChange = (e) => setSearch(e.target.value);
+
+  useEffect(() => {
+    if (search.trim() === '') {
+      setSearchTerm('');
+      setPage(1);
+    }
+  }, [search]);
 
   const fetchMovies = useCallback(
     async (term, pageNumber = 1) => {
@@ -31,7 +37,6 @@ function App({ favorites, toggleFavorite }) {
         });
         setMovies(response.data.results);
         setTotalPages(response.data.total_pages);
-        setPage(pageNumber);
       } catch (error) {
         console.error('Erro ao buscar filmes:', error);
         alert('Erro ao buscar filmes, tente novamente.');
@@ -55,7 +60,6 @@ function App({ favorites, toggleFavorite }) {
         });
         setMovies(response.data.results);
         setTotalPages(response.data.total_pages);
-        setPage(pageNumber);
       } catch (error) {
         console.error('Erro ao buscar filmes populares:', error);
         alert('Erro ao buscar filmes populares, tente novamente.');
@@ -67,30 +71,27 @@ function App({ favorites, toggleFavorite }) {
   );
 
   useEffect(() => {
-    if (isSearching) {
+    if (searchTerm.trim() !== '') {
       fetchMovies(searchTerm, page);
     } else {
       fetchPopular(page);
     }
-  }, [page, isSearching, searchTerm, fetchMovies, fetchPopular]);
+  }, [page, searchTerm, fetchMovies, fetchPopular]);
 
   const handleSearch = () => {
     if (search.trim() === '') return;
-    setIsSearching(true);
     setSearchTerm(search);
-    fetchMovies(search, 1);
+    setPage(1);
   };
 
   const handlePrevPage = () => {
     if (page === 1) return;
-    const newPage = page - 1;
-    setPage(newPage);
+    setPage(page - 1);
   };
 
   const handleNextPage = () => {
     if (page === totalPages) return;
-    const newPage = page + 1;
-    setPage(newPage);
+    setPage(page + 1);
   };
 
   const handleSubmit = (e) => {
@@ -125,7 +126,7 @@ function App({ favorites, toggleFavorite }) {
 
       {loading && <p className="loading-text">Carregando...</p>}
 
-      {!isSearching && movies.length > 0 && (
+      {searchTerm.trim() === '' && movies.length > 0 && (
         <h2 className="section-title">Filmes Populares</h2>
       )}
 
