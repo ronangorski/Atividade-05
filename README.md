@@ -1,9 +1,10 @@
+<<<<<<< HEAD
 # Atividade 5 - Consumo de API com ReactJS
 
 
 # React Movie App
 
-Este é um aplicativo React para buscar filmes, visualizar detalhes e gerenciar uma lista de favoritos, consumindo a API do TMDB (The Movie Database).
+Este é um aplicativo ***React*** para buscar filmes, visualizar detalhes e gerenciar uma lista de favoritos, consumindo a API do TMDB (The Movie Database).
 
 ## Funcionalidades
 
@@ -17,10 +18,10 @@ Este é um aplicativo React para buscar filmes, visualizar detalhes e gerenciar 
 
 ## Tecnologias usadas
 
-- React.js com hooks (useState, useEffect, useCallback)
-- React Router para navegação
-- Axios para chamadas HTTP
-- CSS para estilização simples e responsiva
+- ***React.js*** com hooks (useState, useEffect, useCallback)
+- ***React Router*** para navegação
+- ***Axios*** para chamadas HTTP
+- ***CSS*** para estilização simples e responsiva
 
 ## Pré-requisitos
 
@@ -59,3 +60,7 @@ Este é um aplicativo React para buscar filmes, visualizar detalhes e gerenciar 
     ```
     http://localhost:5173/
     ```
+=======
+# Atividade-05
+Consumo de API com ReactJS
+>>>>>>> 6e70495dafa626420bee3bc8221938200a4356ce
